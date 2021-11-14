@@ -1,10 +1,15 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 // Styles
-import { Wrapper } from './Header.styles';
+import { Wrapper, Content, Brand } from './Header.styles';
 
 const Header: React.FC = () => (
-  <div>This is the header</div>
+  <Wrapper>
+    <Content>
+      <Brand>Employee Directory</Brand>
+    </Content>
+  </Wrapper>
 );
 
-export default Wrapper;
+export default Header;
