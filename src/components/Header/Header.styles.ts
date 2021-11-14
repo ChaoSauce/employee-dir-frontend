@@ -12,6 +12,10 @@ export const Content = styled.div`
   max-width: var(--maxWidth);
   padding: 20px 0;
   margin: 0 auto;
+  
+  a {
+    text-decoration: none;
+  }
 `;
 
 export const Brand = styled.h3`

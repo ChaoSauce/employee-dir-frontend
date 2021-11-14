@@ -7,7 +7,9 @@ import { Wrapper, Content, Brand } from './Header.styles';
 const Header: React.FC = () => (
   <Wrapper>
     <Content>
-      <Brand>Employee Directory</Brand>
+      <Link to='/'>
+        <Brand>Employee Directory</Brand>
+      </Link>
     </Content>
   </Wrapper>
 );
