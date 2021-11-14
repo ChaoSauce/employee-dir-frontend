@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 // Styles
-import { Image } from './Thumb.styles';
+import { Wrapper, Image } from './Thumb.styles';
 
 // Types
 type Props = {
@@ -11,7 +11,9 @@ type Props = {
 
 const Thumb: React.FC<Props> = ({ image }) => (
   <div>
-    <Image src={image} alt='employee-thumb' />
+    <Wrapper>
+      <Image src={image} alt='employee-thumb' />
+    </Wrapper>
   </div>
 );
 
