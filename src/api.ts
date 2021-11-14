@@ -82,6 +82,7 @@ export type CreateEmployee = {
 }
 
 export type Employee = {
+  _id: string;
   gender: string;
   name: Name;
   location: Location;

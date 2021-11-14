@@ -21,6 +21,7 @@ const Home: React.FC = () => {
       <Grid>
         {state.results.map(employee => (
           <Thumb
+            key={employee._id}
             image={employee.picture.large}
           />
         ))}
