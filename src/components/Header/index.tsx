@@ -8,7 +8,7 @@ const Header: React.FC = () => (
   <Wrapper>
     <Content>
       <Link to='/'>
-        <Brand>Employee Directory</Brand>
+        <Brand>Directory</Brand>
       </Link>
     </Content>
   </Wrapper>

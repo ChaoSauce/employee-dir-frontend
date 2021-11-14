@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.div`
-  background-color: var(--darkGrey);
-  padding: 0 20px;
+  background-color: plum;
+  padding: 0 2px;
 `;
 
 export const Content = styled.div`
@@ -10,7 +10,7 @@ export const Content = styled.div`
   align-items: center;
   justify-content: space-between;
   max-width: var(--maxWidth);
-  padding: 20px 0;
+  padding: 2px 0;
   margin: 0 auto;
   
   a {
@@ -18,7 +18,8 @@ export const Content = styled.div`
   }
 `;
 
-export const Brand = styled.h3`
+export const Brand = styled.p`
+  font-size: var(--fontBig);
   width: 200px;
   color: var(--white);
 
