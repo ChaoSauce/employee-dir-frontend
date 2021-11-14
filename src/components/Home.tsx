@@ -1,6 +1,6 @@
 import React from 'react';
 
-// Hook
+// Hooks
 import { useHomeFetch } from '../hooks/useHomeFetch';
 
 const Home: React.FC = () => {
