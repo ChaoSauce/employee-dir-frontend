@@ -23,6 +23,9 @@ const Home: React.FC = () => {
           <Thumb
             key={employee._id}
             image={employee.picture.large}
+            name={`${employee.name.first} ${employee.name.last}`}
+            email={employee.email}
+            phone={employee.phone}
           />
         ))}
       </Grid>
