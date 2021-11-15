@@ -1,6 +1,7 @@
 import React from 'react';
 
 // Components
+import Spinner from './Spinner';
 import Grid from './Grid';
 import Thumb from './Thumb';
 
@@ -14,6 +15,7 @@ const Home: React.FC = () => {
     error,
   } = useHomeFetch();
 
+  if (loading) return <Spinner />;
   if (error) return <div>Something went wrong ...</div>;
 
   return (
