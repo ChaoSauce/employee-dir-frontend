@@ -12,9 +12,9 @@ export const useEmployeeFetch = (employeeId: string | undefined) => {
         setLoading(true);
         setError(false);
 
-        const employee = await API.fetchEmployee(employeeId);
+        const response = await API.fetchEmployee(employeeId);
 
-        setState({ ...employee });
+        setState({ ...response.employee });
         setLoading(false);
       } catch (error) {
         setError(true);
