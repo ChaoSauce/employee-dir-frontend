@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 // Components
 import Header from './components/Header';
 import Home from './components/Home';
+import Employee from './components/Employee';
 import NotFound from './components/NotFound';
 
 // Styles
@@ -16,6 +17,7 @@ const App: React.FC = () => (
     <Header />
     <Routes>
       <Route path='/' element={<Home />} />
+      <Route path='/:employeeId' element={<Employee />} />
       <Route path='/*' element={<NotFound />} />
     </Routes>
     <GlobalStyle />
