@@ -57,8 +57,8 @@ const EmployeeInfo: React.FC<Props> = ({ employee }) => {
     <Wrapper>
       <Content>
         <Buttons>
-          <button type='button' onClick={handleEditSave}>{toggleEdit ? 'Save' : 'Edit'}</button>
-          <button type='button' onClick={handleDelete}>Delete</button>
+          <button type='button' className='btnEdit' onClick={handleEditSave}>{toggleEdit ? 'Save' : 'Edit'}</button>
+          <button type='button' className='btnDelete' onClick={handleDelete}>Delete</button>
         </Buttons>
         <Thumb
           image={employee.picture.large}

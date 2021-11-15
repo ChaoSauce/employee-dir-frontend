@@ -35,22 +35,37 @@ export const Buttons = styled.div`
   position: absolute;
   top: 10px;
   right: 10px;
-  color: var(--white);
   z-index: 100;
   
   button {
     padding: 8px;
     width: 70px;
-    background-color: white;
     margin: 2px;
     border-radius: 5px;
     transition: all 0.3s;
-    border: 1px solid var(--medGrey);
+    border: 0;
     
     :hover {
       cursor: pointer;
-      background-color: var(--medGrey);
-      color: white;
+    }
+
+  }
+
+  .btnEdit {
+    color: var(--white);
+    background-color: var(--medGrey);
+
+    :hover {
+      opacity: 0.7;
+    }
+  }
+
+  .btnDelete {
+    color: var(--white);
+    background-color: firebrick;
+
+    :hover {
+      opacity: 0.7;
     }
   }
 `;
@@ -88,7 +103,7 @@ export const Text = styled.div`
 
   input, select {
     width: 50%;
-    height: 30px;
+    height: 40px;
     border: 1px solid var(--darkGray);
     border-radius: 5px;
     padding: 5px;
