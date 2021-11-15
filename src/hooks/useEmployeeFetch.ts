@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import API, { Employee } from '../api';
 
-export const useEmployeeFetch = (employeeId: string) => {
+export const useEmployeeFetch = (employeeId: string | undefined) => {
   const [state, setState] = useState<Employee>({} as Employee);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);

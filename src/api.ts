@@ -111,7 +111,7 @@ export default {
 
     return await (await fetch(endpoint)).json();
   },
-  fetchEmployee: async (employeeId: string): Promise<Employee> => {
+  fetchEmployee: async (employeeId: string | undefined): Promise<Employee> => {
     const endpoint: string = `${EMPLOYEES_BASE_URL}/${employeeId}`;
     return await (await fetch(endpoint)).json();
   },
@@ -127,7 +127,7 @@ export default {
 
     return employee;
   },
-  updateEmployee: async (employeeId: string, value: Employee): Promise<Employee> => {
+  updateEmployee: async (employeeId: string | undefined, value: Employee): Promise<Employee> => {
     const endpoint: string = `${EMPLOYEES_BASE_URL}/${employeeId}`;
 
     const employee = await (
@@ -139,7 +139,7 @@ export default {
 
     return employee;
   },
-  deleteEmployee: async (employeeId: string, value: Employee): Promise<Employee> => {
+  deleteEmployee: async (employeeId: string | undefined, value: Employee): Promise<Employee> => {
     const endpoint: string = `${EMPLOYEES_BASE_URL}/${employeeId}`;
 
     const employee = await (
