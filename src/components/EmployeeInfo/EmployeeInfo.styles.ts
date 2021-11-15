@@ -37,17 +37,20 @@ export const Buttons = styled.div`
   right: 10px;
   color: var(--white);
   z-index: 100;
-
+  
   button {
-    padding: 5px;
+    padding: 8px;
     width: 70px;
     background-color: white;
     margin: 2px;
     border-radius: 5px;
+    transition: all 0.3s;
+    border: 1px solid var(--medGrey);
     
     :hover {
       cursor: pointer;
-      background-color: var(--lightGrey);
+      background-color: var(--medGrey);
+      color: white;
     }
   }
 `;
