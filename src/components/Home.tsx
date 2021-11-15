@@ -29,6 +29,7 @@ const Home: React.FC = () => {
             name={`${employee.name.first} ${employee.name.last}`}
             email={employee.email}
             phone={employee.phone}
+            clickable
           />
         ))}
       </Grid>

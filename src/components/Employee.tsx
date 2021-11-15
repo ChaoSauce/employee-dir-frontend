@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 // Components
 import BreadCrumb from './BreadCrumb';
 import Spinner from './Spinner';
+import EmployeeInfo from './EmployeeInfo';
 
 // Hook
 import { useEmployeeFetch } from '../hooks/useEmployeeFetch';
@@ -17,7 +18,10 @@ const Employee: React.FC = () => {
   if (error) return <div>Something went wrong...</div>;
 
   return (
-    <BreadCrumb employeeName={`${employee.name.first} ${employee.name.last}`} />
+    <>
+      <BreadCrumb employeeName={`${employee.name.first} ${employee.name.last}`} />
+      <EmployeeInfo employee={employee} />
+    </>
   );
 };
 

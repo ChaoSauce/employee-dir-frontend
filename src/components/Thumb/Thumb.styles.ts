@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const Wrapper = styled.div`
   color: var(--white);
   background: var(--darkGrey);
-  border-radius: 20px;
+  border-radius: 10px;
   padding: 5px;
   text-align: center;
   transition: all 0.3s;
@@ -36,5 +36,5 @@ export const Image = styled.img`
   width: 100%;
   height: 300px;
   object-fit: cover;
-  border-radius: 15px;
+  border-radius: 10px;
 `;

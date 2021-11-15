@@ -125,34 +125,35 @@ export default {
     const employee = await (
       await fetch(endpoint, {
         ...apiConfig('POST'),
-        body: JSON.stringify({ value })
+        body: JSON.stringify({ ...value })
       })
     ).json();
 
     return employee;
   },
-  updateEmployee: async (employeeId: string | undefined, value: Employee): Promise<EmployeeResponse> => {
+  updateEmployee: async (employeeId: string | undefined, value: object): Promise<any> => {
     const endpoint: string = `${EMPLOYEES_BASE_URL}/${employeeId}`;
 
     const employee = await (
       await fetch(endpoint, {
         ...apiConfig('PATCH'),
-        body: JSON.stringify({ value })
+        body: JSON.stringify({ ...value })
       })
     ).json();
 
     return employee;
   },
-  deleteEmployee: async (employeeId: string | undefined, value: Employee): Promise<any> => {
+  deleteEmployee: async (employeeId: string | undefined): Promise<any> => {
     const endpoint: string = `${EMPLOYEES_BASE_URL}/${employeeId}`;
 
-    const employee = await (
-      await fetch(endpoint, {
-        ...apiConfig('DELETE'),
-        body: JSON.stringify({ value })
-      })
-    ).json();
+    const res = await fetch(endpoint, {
+      ...apiConfig('DELETE')
+    });
 
-    return employee;
+    if (res.status === 200) {
+      return res.status;
+    } else {
+      return await res.json();
+    }
   }
 };
