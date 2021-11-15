@@ -2,6 +2,7 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 
 // Components
+import BreadCrumb from './BreadCrumb';
 import Spinner from './Spinner';
 
 // Hook
@@ -16,7 +17,7 @@ const Employee: React.FC = () => {
   if (error) return <div>Something went wrong...</div>;
 
   return (
-    <div>This is the employee page</div>
+    <BreadCrumb employeeName={`${employee.name.first} ${employee.name.last}`} />
   );
 };
 
