@@ -4,6 +4,7 @@ import React from 'react';
 import Spinner from './Spinner';
 import Grid from './Grid';
 import Thumb from './Thumb';
+import Button from './Button';
 
 // Hooks
 import { useHomeFetch } from '../hooks/useHomeFetch';
@@ -13,9 +14,9 @@ const Home: React.FC = () => {
     state,
     loading,
     error,
+    setIsLoadingMore,
   } = useHomeFetch();
 
-  if (loading) return <Spinner />;
   if (error) return <div>Something went wrong ...</div>;
 
   return (
@@ -33,6 +34,10 @@ const Home: React.FC = () => {
           />
         ))}
       </Grid>
+      {loading && <Spinner />}
+      {!loading && (
+        <Button text='Load More' callback={() => setIsLoadingMore(true)} />
+      )}
     </>
   )
 };

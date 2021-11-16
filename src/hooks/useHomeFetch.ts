@@ -12,6 +12,7 @@ export const useHomeFetch = () => {
   const [state, setState] = useState(initialState);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
+  const [isLoadingMore, setIsLoadingMore] = useState(false);
 
   const fetchEmployees = async (page: number, query = '') => {
     try {
@@ -22,7 +23,7 @@ export const useHomeFetch = () => {
 
       setState(prev => ({
         page,
-        results: response.employees
+        results: [...prev.results, ...response.employees]
       }));
     } catch (error) {
       setError(true);
@@ -35,5 +36,12 @@ export const useHomeFetch = () => {
     fetchEmployees(1, '');
   }, []);
 
-  return { state, loading, error };
+  // Load More
+  useEffect(() => {
+    if (!isLoadingMore) return;
+    fetchEmployees(state.page + 1, '');
+    setIsLoadingMore(false);
+  }, [isLoadingMore, state.page]);
+
+  return { state, loading, error, setIsLoadingMore };
 };
