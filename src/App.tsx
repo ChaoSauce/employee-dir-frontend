@@ -7,6 +7,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Home from './components/Home';
 import Employee from './components/Employee';
+import NewEmployee from './components/NewEmployee';
 import NotFound from './components/NotFound';
 
 // Styles
@@ -18,6 +19,7 @@ const App: React.FC = () => (
     <Routes>
       <Route path='/' element={<Home />} />
       <Route path='/:employeeId' element={<Employee />} />
+      <Route path='/new-employee' element={<NewEmployee />} />
       <Route path='/*' element={<NotFound />} />
     </Routes>
     <GlobalStyle />
