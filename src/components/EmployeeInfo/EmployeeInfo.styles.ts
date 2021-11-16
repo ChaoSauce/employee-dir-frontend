@@ -22,7 +22,7 @@ export const Content = styled.div`
   display: flex;
   max-width: var(--maxWidth);
   margin: 0 auto;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.7);
   border-radius: 10px;
   min-height: 500px;
 
@@ -39,12 +39,13 @@ export const Buttons = styled.div`
   z-index: 100;
   
   button {
-    padding: 8px;
-    width: 70px;
-    margin: 2px;
+    padding: 10px;
+    width: 100px;
+    margin: 5px;
     border-radius: 5px;
     transition: all 0.3s;
     border: 0;
+    font-size: var(--fontSmall);
     
     :hover {
       cursor: pointer;
@@ -53,8 +54,7 @@ export const Buttons = styled.div`
   }
 
   .btnEdit {
-    color: var(--white);
-    background-color: var(--medGrey);
+    background-color: var(--lightGrey);
 
     :hover {
       opacity: 0.7;
@@ -108,6 +108,7 @@ export const Text = styled.div`
     border: 1px solid var(--darkGray);
     border-radius: 5px;
     padding: 5px;
+    font-size: var(--fontSmall);
 
     @media screen and (max-width: 768px) {
       width: 100%;
