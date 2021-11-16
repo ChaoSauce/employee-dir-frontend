@@ -13,6 +13,7 @@ export const useHomeFetch = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
   const [isLoadingMore, setIsLoadingMore] = useState(false);
+  const [searchTerm, setSearchTerm] = useState('');
 
   const fetchEmployees = async (page: number, query = '') => {
     try {
@@ -33,15 +34,19 @@ export const useHomeFetch = () => {
 
   useEffect(() => {
     setState(initialState);
-    fetchEmployees(1, '');
-  }, []);
+
+    const searchQuery = searchTerm ? `name=${searchTerm}` : '';
+    fetchEmployees(1, searchQuery);
+  }, [searchTerm]);
 
   // Load More
   useEffect(() => {
     if (!isLoadingMore) return;
-    fetchEmployees(state.page + 1, '');
-    setIsLoadingMore(false);
-  }, [isLoadingMore, state.page]);
 
-  return { state, loading, error, setIsLoadingMore };
+    const searchQuery = searchTerm ? `name=${searchTerm}` : '';
+    fetchEmployees(state.page + 1, searchQuery);
+    setIsLoadingMore(false);
+  }, [isLoadingMore, searchTerm, state.page]);
+
+  return { state, loading, error, searchTerm, setSearchTerm, setIsLoadingMore };
 };

@@ -4,16 +4,20 @@ import React from 'react';
 import Spinner from './Spinner';
 import Grid from './Grid';
 import Thumb from './Thumb';
+import SearchBar from './SearchBar';
 import Button from './Button';
 
 // Hooks
 import { useHomeFetch } from '../hooks/useHomeFetch';
 
+// TODO: potentially add total_pages to API responses so we can use it to determine if we should display the Load More button
 const Home: React.FC = () => {
   const {
     state,
     loading,
     error,
+    searchTerm,
+    setSearchTerm,
     setIsLoadingMore,
   } = useHomeFetch();
 
@@ -21,6 +25,7 @@ const Home: React.FC = () => {
 
   return (
     <>
+      <SearchBar setSearchTerm={setSearchTerm} />
       <Grid>
         {state.results.map(employee => (
           <Thumb
