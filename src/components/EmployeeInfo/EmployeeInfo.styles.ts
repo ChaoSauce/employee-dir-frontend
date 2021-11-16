@@ -5,7 +5,7 @@ export const Wrapper = styled.div`
   background-image: linear-gradient(315deg, #b8c6db 0%, #f5f7fa 74%);
   padding: 40px 20px;
   animation: animateEmployeeInfo 1s;
-  height: 100vh;
+  min-height: 100vh;
 
   @keyframes animatedEmployeeInfo {
     from {
