@@ -3,9 +3,14 @@ import React from 'react';
 // Styles
 import { Wrapper, Content } from './Grid.styles';
 
-const Grid: React.FC = ({ children }) => (
+// Types
+type Props = {
+  header: string;
+}
+
+const Grid: React.FC<Props> = ({ header, children }) => (
   <Wrapper>
-    <h1>Employees</h1>
+    <h1>{header}</h1>
     <Content>
       {children}
     </Content>

@@ -10,7 +10,6 @@ import Button from './Button';
 // Hooks
 import { useHomeFetch } from '../hooks/useHomeFetch';
 
-// TODO: potentially add total_pages to API responses so we can use it to determine if we should display the Load More button
 const Home: React.FC = () => {
   const {
     state,
@@ -26,7 +25,7 @@ const Home: React.FC = () => {
   return (
     <>
       <SearchBar setSearchTerm={setSearchTerm} />
-      <Grid>
+      <Grid header={searchTerm ? 'Search Result' : 'Employees'}>
         {state.results.map(employee => (
           <Thumb
             key={employee._id}
@@ -40,9 +39,13 @@ const Home: React.FC = () => {
         ))}
       </Grid>
       {loading && <Spinner />}
-      {!loading && (
-        <Button text='Load More' callback={() => setIsLoadingMore(true)} />
-      )}
+      {
+        // TODO: potentially add total_pages to API responses so we can use it to determine if we should display the Load More button
+        // For now we'll display the button if the length of employees is multiple of 20...
+        !loading && (state.results.length % 20 === 0) && (
+          <Button text='Load More' callback={() => setIsLoadingMore(true)} />
+        )
+      }
     </>
   )
 };
