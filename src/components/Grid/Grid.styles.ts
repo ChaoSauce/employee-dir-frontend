@@ -5,6 +5,27 @@ export const Wrapper = styled.div`
   margin: 0 auto;
   padding: 0 20px;
 
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    a {
+      background-color: var(--medGrey);
+      color: white;
+      font-size: var(--fontBig);
+      text-decoration: none;
+      border: 1px solid var(--medGrey);
+      border-radius: 30px;
+      padding: 10px 15px;
+      transition: all 0.3s;
+
+      :hover {
+        opacity: 0.8;
+      }
+    }
+  }
+
   h1 {
     color: var(--medGrey);
 
