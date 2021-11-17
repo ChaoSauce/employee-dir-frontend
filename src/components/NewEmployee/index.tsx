@@ -21,6 +21,8 @@ const NewEmployee: React.FC = () => {
   const [success, setSuccess] = useState('');
 
   const handleAddEmployee = async () => {
+    setError('');
+    setSuccess('');
     const response = await API.createEmployee({
       gender: gender.toLocaleLowerCase(),
       name: {
@@ -43,9 +45,13 @@ const NewEmployee: React.FC = () => {
   return (
     <Wrapper>
       <Content>
-        <h2>Add Employee</h2>
-        <p className='error'>{error}</p>
-        <p className='success'>{success}</p>
+        <div className='header'>
+          <h2>Add Employee</h2>
+          {error
+            ? <p className='error'>{error}</p>
+            : success && <p className='success'>{success}</p>
+          }
+        </div>
 
         <div className='form-group'>
           <select value={gender} onChange={e => setGender(e.currentTarget.value)}>

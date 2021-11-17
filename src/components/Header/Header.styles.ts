@@ -15,6 +15,10 @@ export const Content = styled.div`
   
   a {
     text-decoration: none;
+    
+    @media screen and (max-width: 1280px) {
+      margin-left: 5px;
+    }
   }
 `;
 

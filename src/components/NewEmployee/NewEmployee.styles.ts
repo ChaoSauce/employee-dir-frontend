@@ -26,6 +26,12 @@ export const Content = styled.div`
     margin: 15px 0;
     padding: 10px;
     font-size: var(--fontSmall);
+
+    @media screen and (max-width: 768px) {
+      height: 30px;
+      font-size: 80%;
+      padding: 0 10px;
+    }
   }
 
   .form-group {
@@ -45,11 +51,33 @@ export const Content = styled.div`
     }
   }
 
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    p {
+      max-width: 70%;
+      font-size: var(--fontSmall);
+
+
+    }
+
+    @media screen and (max-width: 768px) {
+      display: block;
+    }
+  }
+
   .error {
     color: firebrick;
   }
 
   .success {
     color: green;
+  }
+
+  @media screen and (max-width: 768px) {
+    width: 90%;
+    padding: 10px;
   }
 `;

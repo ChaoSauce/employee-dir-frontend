@@ -23,6 +23,10 @@ export const Wrapper = styled.div`
       :hover {
         opacity: 0.8;
       }
+
+      @media screen and (max-width: 768px) {
+        font-size: var(--fontSmall);
+      }
     }
   }
 

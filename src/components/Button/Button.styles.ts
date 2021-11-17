@@ -18,4 +18,10 @@ export const Wrapper = styled.button`
   :hover {
     opacity: 0.8;
   }
+
+  @media screen and (max-width: 768px) {
+    min-width: 125px;
+    height: 35px;
+    font-size: var(--fontSmall);
+  }
 `;
