@@ -119,7 +119,7 @@ export default {
     const endpoint: string = `${EMPLOYEES_BASE_URL}/${employeeId}`;
     return await (await fetch(endpoint)).json();
   },
-  createEmployee: async (value: Employee): Promise<Employee> => {
+  createEmployee: async (value: object): Promise<any> => {
     const endpoint: string = EMPLOYEES_BASE_URL;
 
     const employee = await (
